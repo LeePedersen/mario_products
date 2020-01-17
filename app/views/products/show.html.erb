@@ -1,9 +1,10 @@
 <h1><%= @product.name %></h1>
+<h2>Price: $<%= @product.cost %></h2>
+<h2>Made in <%= @product.country_of_origin %></h2>
 
 <ul>
   <% @reviews.each do |review| %>
-  <li><%= link_to review.author, product_review_path(@product, review) %></li>
-  <li><%= review.content_body %></li>
+  <li>Review by <%=link_to review.author, product_review_path(@product, review) %></li>
   <% end %>
 </ul>
 
