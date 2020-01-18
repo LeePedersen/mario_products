@@ -15,7 +15,7 @@ _None_
 ## Setup
 * _Make sure you have ruby, rails, and postgres installed_
 * _Clone to machine_
-* _Recreate database by running these commands: `createdb [DATABASE NAME]`, `psql [DATABASE_NAME] < mario_database_backup.sql`, `createdb -T [DATABASE NAME] [TEST DATABASE NAME]`_
+* _Recreate database by running these commands from the root directory of the project: `createdb [DATABASE NAME]`, `psql [DATABASE_NAME] < mario_database_backup.sql`, `createdb -T [DATABASE NAME] [TEST DATABASE NAME]`_
 * _Bundle_
 * _Run `rails s` from the command line_
 * _Open `localhost:3000` in browser_
@@ -26,9 +26,9 @@ _For issues contact support@leepedersen.com_
 ## Technologies Used
 * ruby
 * git
-* sinatra
 * postgres
 * SQL
+* rails
 
 ### License
 *This software is licensed under the MIT license.*
