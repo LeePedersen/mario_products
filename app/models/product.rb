@@ -5,7 +5,7 @@ class Product < ApplicationRecord
   validates :cost, presence: true
   validates :country_of_origin, presence: true
 
-  scope :venus, -> { where(country_of_origin: "Venus") }
+  scope :usa, -> { where(country_of_origin: "United States") }
 
   scope :three_most_recent, -> { order(created_at: :desc).limit(3)}
 
