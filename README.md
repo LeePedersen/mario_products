@@ -6,8 +6,8 @@
 
 _This website allows employees to keep track of projects and volunteers with full CRUD functionality_
 
-## Deviations from Prompt:
-* _Validations for review ratings changed to check specifically if is integer_
+## Deviations from Objectives:
+* _I played around some with validations and my specs don't like them now because there are too many of them, but the validations work_
 
 ## Known Bugs
 _None_
@@ -34,25 +34,3 @@ _For issues contact support@leepedersen.com_
 *This software is licensed under the MIT license.*
 
 Copyright (c) 2020 **_Lee Pedersen_**
-
-
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

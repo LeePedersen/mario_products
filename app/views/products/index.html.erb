@@ -1,39 +1,52 @@
 <h1>Products</h1>
 
-<h2>Products made on Venus:</h2>
-<% if @products.venus.any? %>
-<ul>
-  <% @products.venus.each do |product| %>
-  <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
-</ul>
-<% end %>
+<div class="row">
 
-<h2>These are our three most recently added products!</h2>
-<% if @products.three_most_recent.any? %>
-<ul>
-  <% @products.three_most_recent.each do |product| %>
-  <li><%= link_to product.name, product_path(product) %></li>
-  <% end %>
-</ul>
-<% end %>
+  <div class="column">
+    <h2>Products made on Venus:</h2>
+    <% if @products.venus.any? %>
+    <ul>
+      <% @products.venus.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %></li>
+      <% end %>
+    </ul>
+    <% end %>
+  </div>
 
-<h2>This is our most-reviewed product:</h2>
-<% if @products.most_reviews.any? %>
-<ul>
-  <li><%= link_to @products.most_reviews.first.name, product_path(@products.most_reviews.first) %></li>
-</ul>
-<% end %>
+  <div class="column">
+  <h2>These are our three most recently added products!</h2>
+  <% if @products.three_most_recent.any? %>
+  <ul>
+    <% @products.three_most_recent.each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+  <% end %>
+  </div>
+
+  <div class="column">
+  <h2>This is our most-reviewed product:</h2>
+  <% if @products.most_reviews.any? %>
+  <ul>
+    <li><%= link_to @products.most_reviews.first.name, product_path(@products.most_reviews.first) %></li>
+  </ul>
+  <% end %>
+  </div>
+
+</div>
 
 <h2>More Products!</h2>
-<% if @products.any? %>
-<ul>
-  <% @products.each do |product| %>
-  <li><%= link_to product.name, product_path(product) %></li>
+
+<div class="list">
+  <% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+    <li><%= link_to product.name, product_path(product) %></li>
+    <% end %>
+  </ul>
+  <% else %>
+  <p>There are no products yet.</p>
   <% end %>
-</ul>
-<% else %>
-<p>There are no products yet.</p>
-<% end %>
+</div>
 
 <p><%= link_to "Add Product", new_product_path %></p>
