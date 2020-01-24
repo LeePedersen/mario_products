@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  def index
+    @users = User.all
+    render :index
+  end
+
   def new
     @user = User.new
   end
@@ -21,27 +26,33 @@ class UsersController < ApplicationController
     render :edit
   end
 
-  # def update
-  #   @user = User.find(params[:id])
-  #   admin_id = user_params[:admin]
-  #   if admin_id =="1"
-  #     if @user.update({"admin"=>true})
-  #       flash[:notice] = "success"
-  #       redirect_to user_path(@user)
-  #     else
-  #       flash[:notice] = "failure"
-  #       render :edit
-  #     end
-  #   elsif admin_id == "0"
-  #     if @user.update({"admin"=>false})
-  #       flash[:notice] = "success"
-  #       redirect_to user_path(@user)
-  #     else
-  #       flash[:notice] = "failure"
-  #       render :edit
-  #     end
-  #   end
-  # end
+  def show
+    @user = User.find(params[:id])
+    @reviews = Review.all
+    render :show
+  end
+
+  def update
+    @user = User.find(params[:id])
+    admin_id = user_params[:admin]
+    if admin_id =="1"
+      if @user.update({"admin"=>true})
+        flash[:notice] = "success"
+        redirect_to user_path(@user)
+      else
+        flash[:notice] = "failure"
+        render :edit
+      end
+    elsif admin_id == "0"
+      if @user.update({"admin"=>false})
+        flash[:notice] = "success"
+        redirect_to user_path(@user)
+      else
+        flash[:notice] = "failure"
+        render :edit
+      end
+    end
+  end
 
   def destroy
     @user = User.find(params[:id])

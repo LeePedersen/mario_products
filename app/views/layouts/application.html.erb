@@ -18,6 +18,14 @@
       <%= link_to "Sign up", '/users/new' %> |
       <%= link_to "Sign in", '/signin' %>
     <% end %>
+    
+    <div class="admin">
+      <% if current_user.admin %>
+        <h2>Admin Tools</h2>
+        <%= link_to "User list", '/users' %>
+      <% end %>
+    </div>
+
     <div class="content">
 
       <%= flash[:alert] %>

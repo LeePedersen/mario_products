@@ -1,47 +1,20 @@
-<h1><%= @user.email %></h1>
+<h1>User <%= @user.email %></h1>
 
-<% if @user.admin %>
-<h4> Superuser </h4>
-<% else %>
-<h4> User </h4>
-<% end %>
-
-<% if @questions.any? %>
-<h4>Here are the questions for this user:</h4>
-
-<% @questions.each do |question| %>
-<ul>
-  <% if question.user_name == @user.email %>
-  <li>
-    <%= link_to question, question_path(@user, question) %>
-  </li>
-  <% end %>
-</ul>
-<% end %>
-<% else %>
-<p>No questions are listed for this user.</p>
-<% end %>
-
-<% if @answers.any? %>
-  <h4>Here are the answers for this user:</h4>
-
-  <% @answers.each do |answer| %>
+<% if @reviews.any? %>
+<h4>Here are the reviews for this user:</h4>
+  <% @reviews.each do |review| %>
     <ul>
-      <% if answer.user_name == @user.email %>
+      <% if review.author == @user.email %>
       <li>
-          <%= link_to answer.body, question_answer_path(@user, answer) %>
+        <%= link_to review, review_path(@user, review) %>
       </li>
-      <% end %>
     </ul>
+    <% end %>
   <% end %>
 <% else %>
-  <p>No answers are listed for this user.</p>
+  <p>No reviews are listed for this user.</p>
 <% end %>
 
-<p><%= link_to "Change Privileges", edit_user_path(@user) %></p>
-
-<p><%= link_to "Delete user", user_path(@user),
-                        :data => {:confirm => "Are you sure?",
-                                       :method => "delete"} %></p>
+<p><%= link_to "Change User Privileges", edit_user_path(@user) %></p>
 
 <p><%= link_to "Return to users", users_path %></p>

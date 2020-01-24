@@ -42,3 +42,7 @@ h2 {
 a {
   text-decoration: none;
 }
+
+.admin {
+  float: right;
+}
