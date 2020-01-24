@@ -18,9 +18,4 @@
 <% end %>
 
 <p><%= link_to "Change User Privileges", edit_user_path(@user) %></p>
-
-<p><%= link_to "Delete user", user_path(@user),
-                        :data => {:confirm => "Are you sure?",
-                                       :method => "delete"} %></p>
-
 <p><%= link_to "Return to users", users_path %></p>

@@ -10,11 +10,8 @@ _This is a site for a restaurant to keep track of its products and reviews with 
 * _Rails 5.2.4.1_
 * _Ruby 2.5.1_
 
-## Deviations from Objectives:
-* _I played around some with validations and my specs don't like them now because there are too many of them, but the validations work_
-
 ## Known Bugs
-_None_
+_Sometimes when you log out and try and log back in, authentication fails. I do not know why_
 
 ## Setup
 * _Make sure you have ruby, rails, and postgres installed_

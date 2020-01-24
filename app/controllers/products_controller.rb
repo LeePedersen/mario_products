@@ -31,7 +31,9 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @reviews = @product.reviews
-    @user = User.find(session[:user_id])
+    if @user
+      @user = User.find(session[:user_id])
+    end
     render :show
   end
 
