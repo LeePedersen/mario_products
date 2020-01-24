@@ -4,8 +4,10 @@ Rails.application.routes.draw do
     resources :reviews, except: [:destroy, :update]
   end
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  resources :users, except: [:destroy, :index]
+
+  # get '/signup' => 'users#new'
+  # post '/users' => 'users#create'
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
