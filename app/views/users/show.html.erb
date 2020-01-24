@@ -3,20 +3,24 @@
 <% present_reviews = false %>
 
 <h4>User Reviews</h4>
-<% @reviews.each do |review| %>
-  <ul>
+<ul>
+  <% @reviews.each do |review| %>
     <% if review.author == @user.email %>
     <li>
       <% present_reviews = true %>
       <%= link_to review, review_path(@user, review) %>
     </li>
-  </ul>
   <% end %>
 <% end %>
+</ul>
 <% if present_reviews == false %>
   <p>No reviews are listed for this user.</p>
 <% end %>
 
 <p><%= link_to "Change User Privileges", edit_user_path(@user) %></p>
+
+<p><%= link_to "Delete user", user_path(@user),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>
 
 <p><%= link_to "Return to users", users_path %></p>

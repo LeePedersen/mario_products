@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
 
   before_action :authorize, only: [:show, :new, :create]
+  before_action :authorize_admin, only: []
+
 
   def new
     @product = Product.find(params[:product_id])
@@ -24,6 +26,12 @@ class ReviewsController < ApplicationController
     @product = Product.find(params[:product_id])
     @review = Review.find(params[:id])
     render :show
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to product_path(@review.product)
   end
 
   private
