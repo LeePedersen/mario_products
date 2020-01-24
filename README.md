@@ -11,7 +11,7 @@ _This is a site for a restaurant to keep track of its products and reviews with 
 * _Ruby 2.5.1_
 
 ## Known Bugs
-_Sometimes when you log out and try and log back in, authentication fails. I do not know why_
+_Admins cannot log back in after becoming admins_
 
 ## Setup
 * _Make sure you have ruby, rails, and postgres installed_

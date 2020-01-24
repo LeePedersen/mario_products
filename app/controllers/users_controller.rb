@@ -38,7 +38,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     admin_id = user_params[:admin]
     if admin_id =="1"
-      if @user.update({"admin"=>true})
+      params[:user][:admin] = true
+      if @user.update(user_params)
         flash[:notice] = "success"
         redirect_to user_path(@user)
       else
