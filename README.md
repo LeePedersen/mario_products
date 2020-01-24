@@ -6,6 +6,10 @@
 
 _This is a site for a restaurant to keep track of its products and reviews with full CRUD functionality_
 
+## Versions:
+* _Rails 5.2.4.1_
+* _Ruby 2.5.1_
+
 ## Deviations from Objectives:
 * _I played around some with validations and my specs don't like them now because there are too many of them, but the validations work_
 
@@ -30,6 +34,8 @@ _For issues contact support@leepedersen.com_
 * postgres
 * SQL
 * rails
+* css
+* html
 
 ### License
 *This software is licensed under the MIT license.*
