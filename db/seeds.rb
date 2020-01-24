@@ -1,6 +1,8 @@
 Product.destroy_all
 Review.destroy_all
 
+# seed database with images if time
+
 50.times do |index|
   new_product = Product.create!(name: Faker::Space.star, cost: Faker::Number.number(digits: 2), country_of_origin: Faker::Space.planet)
   5.times do |index|
