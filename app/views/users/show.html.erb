@@ -1,20 +1,21 @@
 <h1>User <%= @user.email %></h1>
 
-<% if @reviews.any? %>
-<h4>Here are the reviews for this user:</h4>
-  <% @reviews.each do |review| %>
-    <ul>
-      <% if review.author == @user.email %>
-      <li>
-        <%= link_to review, review_path(@user, review) %>
-      </li>
-    </ul>
-    <% end %>
+<% present_reviews = false %>
+
+<h4>User Reviews</h4>
+<% @reviews.each do |review| %>
+  <ul>
+    <% if review.author == @user.email %>
+    <li>
+      <% present_reviews = true %>
+      <%= link_to review, review_path(@user, review) %>
+    </li>
+  </ul>
   <% end %>
-<% else %>
+<% end %>
+<% if present_reviews == false %>
   <p>No reviews are listed for this user.</p>
 <% end %>
-
 
 <p><%= link_to "Change User Privileges", edit_user_path(@user) %></p>
 
