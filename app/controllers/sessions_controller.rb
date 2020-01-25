@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.authenticate(params[:email], params[:password])
-    binding.pry
     if @user
       flash[:notice] = "You've signed in."
       session[:user_id] = @user.id

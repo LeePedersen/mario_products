@@ -36,17 +36,16 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    admin_id = user_params[:admin]
-    if admin_id =="1"
-      params[:user][:admin] = true
-      if @user.update(user_params)
+    if user_params[:admin] == "1"
+      @user.admin = true
+      if @user.admin = true
         flash[:notice] = "success"
         redirect_to user_path(@user)
       else
         flash[:notice] = "failure"
         render :edit
       end
-    elsif admin_id == "0"
+    elsif user_params[:admin] == "0"
       if @user.update({"admin"=>false})
         flash[:notice] = "success"
         redirect_to user_path(@user)
