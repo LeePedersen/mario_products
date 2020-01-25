@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  # before_action :authorize_admin, only: [:index, :show, :destroy]
+  before_action :authorize_admin, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @users = User.all
@@ -37,8 +37,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if user_params[:admin] == "1"
-      @user.admin = true
       if @user.admin = true
+        @user.save
         flash[:notice] = "success"
         redirect_to user_path(@user)
       else
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
         render :edit
       end
     elsif user_params[:admin] == "0"
-      if @user.update({"admin"=>false})
+      if @user.admin = false
         flash[:notice] = "success"
         redirect_to user_path(@user)
       else
@@ -55,6 +55,30 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  # Old update function. They both set the password hash to nil whenever I try and update things
+
+  # def update
+  #   @user = User.find(params[:id])
+  #   admin_id = user_params[:admin]
+  #   if admin_id =="1"
+  #     if @user.update({"admin"=>true})
+  #       flash[:notice] = "success"
+  #       redirect_to user_path(@user)
+  #     else
+  #       flash[:notice] = "failure"
+  #       render :edit
+  #     end
+  #   elsif admin_id == "0"
+  #     if @user.update({"admin"=>false})
+  #       flash[:notice] = "success"
+  #       redirect_to user_path(@user)
+  #     else
+  #       flash[:notice] = "failure"
+  #       render :edit
+  #     end
+  #   end
+  # end
 
   def destroy
     @user = User.find(params[:id])
