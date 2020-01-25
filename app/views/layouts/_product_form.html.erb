@@ -2,7 +2,7 @@
 
 <%= form_for @product do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, placeholder: @user.email %>
   <%= f.label :cost %>
   <%= f.text_field :cost %>
   <%= f.label :country_of_origin %>

@@ -9,7 +9,9 @@ describe Review do
   it { should validate_inclusion_of(:rating).in_range(1..5)}
 
   it("titleizes the name of a reviewer") do
-    review = Review.create({author: "me", rating: 3, content_body: "It was good I guess" })
-    expect(review.author()).to(eq("Me"))
+    product = Product.create({name: "giant steps", cost: 5.00, country_of_origin: "China", id: 1})
+    review = product.reviews.new({author: "me", rating: 3, content_body: "It was good I guess" })
+    saved_review = Review.find(1)
+    expect(saved_review.author()).to(eq("Me"))
   end
 end

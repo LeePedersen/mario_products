@@ -5,12 +5,14 @@ class ReviewsController < ApplicationController
 
 
   def new
+    @user = User.find(session[:user_id])
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
     render :new
   end
 
   def create
+    @user = User.find(session[:user_id])
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     if @review.save
