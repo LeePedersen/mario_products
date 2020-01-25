@@ -8,13 +8,17 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @product = Product.new
     render :new
   end
 
   def create
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @product = Product.new(product_params)
     if @product.save
       redirect_to products_path
@@ -26,7 +30,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @product = Product.find(params[:id])
     render :edit
   end
@@ -34,14 +40,16 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @reviews = @product.reviews
-    if @user
+    if session[:user_id]
       @user = User.find(session[:user_id])
     end
     render :show
   end
 
   def update
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @product= Product.find(params[:id])
     if @product.update(product_params)
       redirect_to products_path

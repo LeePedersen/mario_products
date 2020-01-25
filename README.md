@@ -2,6 +2,11 @@
 
 #### _Lee Pedersen_
 
+### **Note to grader**
+
+_Admin account is name 'admin' and password 'admin'_
+
+
 ## Description
 
 _This is a site for a restaurant to keep track of its products and reviews with full CRUD functionality_
@@ -11,7 +16,7 @@ _This is a site for a restaurant to keep track of its products and reviews with 
 * _Ruby 2.5.1_
 
 ## Known Bugs
-_Admins cannot log back in after becoming admins_
+_If a user's settings are changed so that they are admins, their password becomes nothing. I don't know why this is happening_
 
 ## Setup
 * _Make sure you have ruby, rails, and postgres installed_

@@ -1,18 +1,22 @@
 class ReviewsController < ApplicationController
 
-  before_action :authorize, only: [:show, :new, :create]
-  before_action :authorize_admin, only: []
+  before_action :authorize, only: [:new, :create]
+  before_action :authorize_admin, only: [:destroy]
 
 
   def new
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new
     render :new
   end
 
   def create
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    end
     @product = Product.find(params[:product_id])
     @review = @product.reviews.new(review_params)
     if @review.save
