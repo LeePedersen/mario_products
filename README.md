@@ -4,8 +4,8 @@
 
 ### **Note to grader**
 
-_Admin account is name 'admin' and password 'admin'_
-
+* _Admin account is name 'admin' and password 'admin'_
+* _Database is named 'mario_products_development'_
 
 ## Description
 
