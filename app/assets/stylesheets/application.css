@@ -1,8 +1,9 @@
  body {
-   background-color: #DEDBD2;
    font-size: 20px;
    line-height: 2;
-   color: #4A5759;
+   color: white;
+   font-weight: bold;
+   background-image: url('https://www.custommade.com/blog/content/uploads/2014/09/urban-chicken-header.jpg');
  }
 
 h1 {
@@ -14,10 +15,11 @@ h1 {
 .row {
   margin-left: 10%;
 }
+
 .column {
   float: left;
   width: 30%;
-  background-color: #B0C4B1;
+  background: rgba(50, 10, 0, .7);
   padding: 5px;
   margin: 3px;
   border: 1px solid;
@@ -36,7 +38,6 @@ h1 {
 h2 {
   font-size: 26px;
   text-align: center;
-  background-color:
 }
 
 a {
@@ -45,4 +46,18 @@ a {
 
 .admin {
   float: right;
+}
+
+.content {
+  background: rgba(50, 10, 0, .85);
+  padding: 5%;
+}
+
+.navbar {
+  background-color: white;
+  color: black;
+}
+
+img {
+  width: 25px;
 }

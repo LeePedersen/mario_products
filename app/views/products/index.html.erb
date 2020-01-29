@@ -8,31 +8,25 @@
   <div class="column">
     <h2>Here are some products that were made in the US!</h2>
     <% if @products.usa.any? %>
-    <ul>
       <% @products.usa.each do |product| %>
-      <li><%= link_to product.name, product_path(product) %></li>
+      <p><img src="http://pngimg.com/uploads/egg/egg_PNG17.png" alt="egg"> <%= link_to product.name, product_path(product) %></p>
       <% end %>
-    </ul>
     <% end %>
   </div>
 
   <div class="column">
   <h2>These are our three most recently added products!</h2>
   <% if @products.three_most_recent.any? %>
-  <ul>
     <% @products.three_most_recent.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
+    <p><img src="http://pngimg.com/uploads/egg/egg_PNG17.png" alt="egg"> <%= link_to product.name, product_path(product) %></p>
     <% end %>
-  </ul>
   <% end %>
   </div>
 
   <div class="column">
   <h2>This is our most-reviewed product!</h2>
   <% if @products.most_reviews.any? %>
-  <ul>
-    <li><%= link_to @products.most_reviews.first.name, product_path(@products.most_reviews.first) %></li>
-  </ul>
+    <p><img src="http://pngimg.com/uploads/egg/egg_PNG17.png" alt="egg"> <%= link_to @products.most_reviews.first.name, product_path(@products.most_reviews.first) %></p>
   <% end %>
   </div>
 
@@ -42,11 +36,9 @@
 
 <div class="list">
   <% if @products.any? %>
-  <ul>
     <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %></li>
+    <p><img src="http://pngimg.com/uploads/egg/egg_PNG17.png" alt="egg"> <%= link_to product.name, product_path(product) %></p>
     <% end %>
-  </ul>
   <% else %>
   <p>There are no products yet.</p>
   <% end %>
